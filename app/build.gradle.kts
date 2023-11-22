@@ -7,6 +7,10 @@ android {
     namespace = "com.example.menucontextual"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.menucontextual"
         minSdk = 24
