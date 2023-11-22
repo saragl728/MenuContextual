@@ -18,35 +18,38 @@ class MainActivity : AppCompatActivity() {
         val imagen = binding.imagenUsuario
         registerForContextMenu(imagen)
 
-        fun onCreateContextMenu(
-            menu: ContextMenu?,
-            v: View?,
-            menuInfo: ContextMenu.ContextMenuInfo?
-        ) {
-            super.onCreateContextMenu(menu, v, menuInfo)
-            menuInflater.inflate(R.menu.menu_contextual, menu)
-            menu?.setHeaderTitle("Menú contextual")
-        }
 
-        fun onContextItemSelected(item: MenuItem): Boolean {
-            return when (item.itemId){
-                R.id.descargar -> {
-                    Toast.makeText(this, "Opción descargar", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.compartir -> {
-                    Toast.makeText(this, "Opción compartir", Toast.LENGTH_SHORT).show()
-                    true
-                }
+    }
 
-                R.id.copiar -> {
-                    Toast.makeText(this, "Opción copiar", Toast.LENGTH_SHORT).show()
-                    true
-                }
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        menuInflater.inflate(R.menu.menu_contextual, menu)
+        menu?.setHeaderTitle("Menú contextual")
+    }
 
-                else -> {
-                    super.onContextItemSelected(item)
-                }
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.descargar -> {
+                Toast.makeText(this, "Opción descargar", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.compartir -> {
+                Toast.makeText(this, "Opción compartir", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.copiar -> {
+                Toast.makeText(this, "Opción copiar", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            else -> {
+                super.onContextItemSelected(item)
             }
         }
     }
