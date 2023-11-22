@@ -17,8 +17,6 @@ class MainActivity : AppCompatActivity() {
 
         val imagen = binding.imagenUsuario
         registerForContextMenu(imagen)
-
-
     }
 
     override fun onCreateContextMenu(
