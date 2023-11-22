@@ -31,23 +31,25 @@ class MainActivity : AppCompatActivity() {
         menu?.setHeaderTitle("Menú contextual")
     }
 
+    //muestra toasts dependiendo de la opción seleccionada
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.descargar -> {
-                Toast.makeText(this, "Opción descargar", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Se va a descargar la imagen", Toast.LENGTH_SHORT).show()
                 true
             }
 
             R.id.compartir -> {
-                Toast.makeText(this, "Opción compartir", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Se va a compartir la imagen", Toast.LENGTH_SHORT).show()
                 true
             }
 
             R.id.copiar -> {
-                Toast.makeText(this, "Opción copiar", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Se ha copiado la imagen", Toast.LENGTH_SHORT).show()
                 true
             }
 
+            //no llegará a usarse, pero si la comento me da error
             else -> {
                 super.onContextItemSelected(item)
             }
